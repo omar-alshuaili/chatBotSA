@@ -1,0 +1,29 @@
+<!-- <h1>Chat Bot</h1>
+<ng-container *ngFor="let message of messages">
+    <div>
+        {{message.sender}}: {{message.content}}
+    </div>
+</ng-container>
+<input [(ngModel)]="userInput" (keyup.enter)=postLexText>
+<button title="Post Lex Text Button" (click)="postLexText()"> Post Text </button>
+ -->
+
+
+<div class="content">
+    <div class="card">
+        <div class="heading">
+            <div class="text">the car bot</div>
+            <img src="https://gogeticon.net/files/2950565/b15187318b19a4abcef05283cc3be807.png" alt="">
+
+        </div>
+
+        <div class="chat-content"></div>
+        <div class="send-div">
+            <input [(ngModel)]="userInput" (keyup.enter)=postLexText>
+            <button title="Post Lex Text Button" (click)="postLexText()"> send </button>
+
+        </div>
+
+
+    </div>
+</div>
