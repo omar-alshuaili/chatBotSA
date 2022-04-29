@@ -13,12 +13,21 @@ export class ChatbotComponent implements OnInit {
   messages: Message[] = [];
   lexState: string = 'Hi what would you like to do';
   chats:any = []
-  constructor(private dynamodb:DynamodbService) { }
+  today!: number;
+  constructor(private dynamodb:DynamodbService) {
+this.today = Date.now()
+   }
 
   ngOnInit(): void {
     this.messages.push(new Message(this.lexState, 'Bot'));
   }
+ 
+  
+
+
   postLexText() {
+   this.today = Date.now();
+
     var params = {
       botAlias: 'prod',
       botName: 'carbot',

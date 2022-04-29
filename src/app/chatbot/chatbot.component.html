@@ -6,7 +6,17 @@
 
         </div>
 
-        <div class="chat-content"></div>
+        <div class="chat-content">
+            <div [ngClass]="{'bot':message.sender == 'Bot','user':message.sender == 'User'}"   *ngFor="let message of messages " class="message" >
+            <div class="bubble"     >
+                {{message.content}}
+                
+            </div>
+            <div class="time-stamp">{{today | date:'HH:mm'}}</div>
+           
+        </div>
+           
+        </div>
         <div class="send-div">
             <input [(ngModel)]="userInput" (keyup.enter)=postLexText>
             <button title="Post Lex Text Button" (click)="postLexText()"> send </button>
